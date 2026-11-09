@@ -1,0 +1,40 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "useIgnoreFile": false
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "includes": ["src/**/*.ts", "src/**/*.tsx", "*.json", "!src/wailsjs"]
+    },
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 320
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single"
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "preset": "recommended",
+            "style": {
+                "useBlockStatements": "error"
+            },
+            "a11y": {
+                "noStaticElementInteractions": "off",
+                "useKeyWithClickEvents": "off",
+                "useButtonType": "off"
+            },
+            "suspicious": {
+                "noArrayIndexKey": "off"
+            }
+        }
+    }
+}

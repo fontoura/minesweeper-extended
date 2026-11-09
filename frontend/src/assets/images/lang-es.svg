@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" aria-label="Spanish (Mexico) minimal flag">
+  <rect width="8" height="16" x="0" y="0" fill="#006847"/>
+  <rect width="8" height="16" x="8" y="0" fill="#FFFFFF"/>
+  <rect width="8" height="16" x="16" y="0" fill="#CE1126"/>
+  <circle cx="12" cy="8" r="1.8" fill="#C9A227"/>
+  <path d="M10.9 8.15 C10.9 7.1 13.1 7.1 13.1 8.15 C13.1 9.2 10.9 9.2 10.9 8.15 Z" fill="#0A7F3F"/>
+  <path d="M10.5 9.7 Q12 10.8 13.5 9.7" fill="none" stroke="#8B5A2B" stroke-width="0.55" stroke-linecap="round"/>
+</svg>

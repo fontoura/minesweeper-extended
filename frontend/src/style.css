@@ -1,0 +1,372 @@
+html {
+    background-color: #1b2636;
+    text-align: center;
+    color: white;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+@font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local(""),
+        url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
+}
+
+#App {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* ---------- Language selector ---------- */
+.lang-selector {
+    position: fixed;
+    top: 10px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.lang-button {
+    padding: 2px;
+    line-height: 0;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+    opacity: 0.55;
+}
+
+.lang-button img {
+    display: block;
+    width: 24px;
+    height: 16px;
+}
+
+.lang-button:hover {
+    opacity: 0.85;
+}
+
+.lang-button.active {
+    opacity: 1;
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+/* ---------- Options screen ---------- */
+.options {
+    background: #c0c0c0;
+    color: #000;
+    padding: 24px 28px;
+    border: 3px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 280px;
+}
+
+.options h1 {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+}
+
+.presets {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.presets button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 12px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.presets button span {
+    font-size: 11px;
+    color: #333;
+}
+
+.presets button:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.fields {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.fields label {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 4px;
+    flex: 1;
+}
+
+.fields input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 2px solid;
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.options .start {
+    padding: 8px;
+    font-size: 15px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+}
+
+.options .start:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.options .error {
+    color: #b00000;
+    font-size: 12px;
+    text-align: center;
+}
+
+.options > button {
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+}
+
+.options > button:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.menu {
+    min-width: 300px;
+}
+
+.select-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.select-label select {
+    padding: 5px;
+    border: 2px solid;
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+    background: #fff;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.button-row button {
+    flex: 1;
+    padding: 8px;
+    font-size: 15px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+}
+
+.button-row button:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+/* ---------- Game ---------- */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.exit {
+    align-self: flex-start;
+    background: #c0c0c0;
+    color: #000;
+    border: 2px solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.exit:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.game-frame {
+    background: #c0c0c0;
+    padding: calc(var(--unit) * 6);
+    border: calc(var(--unit) * 3) solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+}
+
+/* ---------- Top panel ---------- */
+.top-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: calc(var(--unit) * 6);
+    background: #c0c0c0;
+}
+
+.top-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-repeat: repeat-y;
+    background-size: 100% 100%;
+}
+
+.top-fill-left {
+    left: 0;
+}
+
+.top-fill-right {
+    right: 0;
+}
+
+/* ---------- Scoreboard ---------- */
+.scoreboard {
+    display: flex;
+    background: #000;
+    position: relative;
+    z-index: 1;
+}
+
+.digit {
+    display: block;
+}
+
+/* ---------- Face ---------- */
+.face-button {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.top-center {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--unit) * 4);
+    position: relative;
+    z-index: 1;
+}
+
+.power {
+    width: calc(var(--unit) * 22);
+    height: calc(var(--unit) * 22);
+    font-size: calc(var(--unit) * 12);
+    line-height: 1;
+    padding: 0;
+    background: #c0c0c0;
+    border: calc(var(--unit) * 2) solid;
+    border-color: #fff #7b7b7b #7b7b7b #fff;
+    cursor: pointer;
+    color: #000;
+}
+
+.power-p1 {
+    color: #d01020;
+}
+.power-p2 {
+    color: #1030d0;
+}
+
+.power.active,
+.power:active {
+    border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.power:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* ---------- Board ---------- */
+.board {
+    box-sizing: content-box;
+    width: fit-content;
+    background: #c0c0c0;
+}
+
+.grid {
+    display: grid;
+    line-height: 0;
+    box-sizing: content-box;
+}
+
+.cell {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* ---------- Versus selectors ---------- */
+.selectors {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.selector {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* ---------- Versus bar ---------- */
+.versus-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.turn-label {
+    color: #fff;
+    font-size: 15px;
+}
+
+.turn-label.hidden {
+    visibility: hidden;
+}
