@@ -8,6 +8,8 @@ Years later I decided to bring it back and ported it to TypeScript. It now runs 
 
 Besides the classic single-player mode, there is a turn-based versus mode where you can play against a friend or against the computer (easy, medium or hard), similar to the old two-player Minesweeper available at MSN Messenger.
 
+![Screenshot](screenshot.png)
+
 ## Prerequisites
 
 - Go 1.26 or newer: https://go.dev/dl/
@@ -45,6 +47,43 @@ wails doctor
 ```
 
 `wails doctor` will tell you if any system dependency is missing.
+
+## Building on Linux
+
+On a fresh Ubuntu, install the toolchain and build dependencies before building.
+
+1. System build dependencies (GTK + WebKit, compiler, installer tooling):
+
+   ```bash
+   sudo apt update && sudo apt install -y \
+     pkg-config libgtk-3-dev libwebkit2gtk-4.0-dev build-essential nsis
+   ```
+
+2. Go 1.26 (installed globally into `/usr/local`):
+
+   ```bash
+   cd /tmp && curl -LO https://go.dev/dl/go1.26.0.linux-amd64.tar.gz && \
+   sudo rm -rf /usr/local/go && \
+   sudo tar -C /usr/local -xzf go1.26.0.linux-amd64.tar.gz && \
+   echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' | sudo tee /etc/profile.d/go.sh
+   ```
+
+   Open a new shell (or `source /etc/profile.d/go.sh`) so `go` is on your `PATH`.
+
+3. Node.js 22 (Vite 7 needs Node 20+; the Ubuntu 20.04 default is too old):
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && \
+   sudo apt install -y nodejs
+   ```
+
+4. The Wails CLI:
+
+   ```bash
+   go install github.com/wailsapp/wails/v2/cmd/wails@v2.17.1
+   ```
+
+Verify everything with `go version`, `node --version`, and `wails version`, then build as described below.
 
 ## Running in development
 
